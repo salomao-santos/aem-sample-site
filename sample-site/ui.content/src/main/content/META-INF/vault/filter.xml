@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/sample-site" mode="merge"/>
+    <filter root="/content/sample-site" mode="merge"/>
+    <filter root="/content/dam/sample-site" mode="merge"/>
+    <filter root="/content/experience-fragments/sample-site" mode="merge"/>
+</workspaceFilter>
