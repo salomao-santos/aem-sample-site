@@ -177,7 +177,7 @@
 																	sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
 																	fieldLabel="Name" 
 																	emptyText="Name" 
-																	name="./jrc:name"
+																	name="./jcr:name"
 																	requerid="true" />
 
 																<initials jcr:primaryType="nt:unstructured"
