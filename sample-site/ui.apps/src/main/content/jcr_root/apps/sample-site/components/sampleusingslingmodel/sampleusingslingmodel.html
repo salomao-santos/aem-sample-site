@@ -1,5 +1,6 @@
-<div data-sly-use.example="com.br.sample.site.core.models.ExampleComponentMultifieldUsingSlingModel"
-     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.example="com.br.sample.site.core.models.SampleUsingSlingModel"
+     data-sly-test.hasContent="${example.title || example.description}">
 	
 	<h2>Example Component Multifield Using Sling Model</h2>
 	
@@ -18,8 +19,7 @@
  	        Flag
  	   		<img src="${flag}" alt="${name}"/>
  	   </li>
-    </ul>  
-   
-    
+    </ul> 
+     
+<sly data-sly-call="${placeholderTemplate.placeholder  @ isEmpty=!hasContent}"></sly>  
 </div>
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=true}"></sly>

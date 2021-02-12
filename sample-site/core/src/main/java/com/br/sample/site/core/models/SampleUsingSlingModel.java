@@ -15,10 +15,8 @@ import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ExampleComponentMultifieldUsingSlingModel {
+public class SampleUsingSlingModel {
 
-	protected static final String RESOURCE_TYPE = "/app/wknd/components/samplemultifieldmodel";
-    
 	@ValueMapValue
 	@Required
 	private String title;
@@ -27,7 +25,7 @@ public class ExampleComponentMultifieldUsingSlingModel {
 	@Default(values = "description")
 	private String description;
 
-	// Multifield Child Resource for States
+	//Multifield Child Resource for States
 	@ChildResource(name = "states")
 	private List<Resource> resourceStates;
 
@@ -65,4 +63,5 @@ public class ExampleComponentMultifieldUsingSlingModel {
 	public List<StateModel> getStates() {
 		return states;
 	}
+	
 }
