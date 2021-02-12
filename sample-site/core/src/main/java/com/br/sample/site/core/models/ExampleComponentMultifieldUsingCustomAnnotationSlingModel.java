@@ -15,7 +15,7 @@ import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ExampleComponentMultifieldUsingSlingModel {
+public class ExampleComponentMultifieldUsingCustomAnnotationSlingModel {
 
 	protected static final String RESOURCE_TYPE = "/app/wknd/components/samplemultifieldmodel";
     
