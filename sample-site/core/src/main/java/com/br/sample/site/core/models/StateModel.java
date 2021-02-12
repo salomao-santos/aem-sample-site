@@ -12,11 +12,11 @@ public class StateModel {
 	@ValueMapValue(name = "jcr:name")
 	private String name;
 
-	@ValueMapValue(name = "initials")
+	@ValueMapValue
 	private String initials;
 
-	@ValueMapValue(name = "icon")
-	private String icon;
+	@ValueMapValue
+	private String flag;
 
 	public String getName() {
 		return name;
@@ -34,12 +34,12 @@ public class StateModel {
 		this.initials = initials;
 	}
 
-	public String getIcon() {
-		return icon;
+	public String getFlag() {
+		return flag;
 	}
 
-	public void setIcon(String icon) {
-		this.icon = icon;
+	public void setFlag(String flag) {
+		this.flag = flag;
 	}
 
 }
