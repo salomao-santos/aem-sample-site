@@ -1,29 +1,25 @@
-<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+<div data-sly-use.example="com.br.sample.site.core.models.ExampleComponentMultifieldUsingCustomAnnotationSlingModel"
+     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
 	
-	<h2>Example Component Multifield Using Pure HTL</h2>
+	<h2>Example Component Multifield Using Custom Annotation Sling Model</h2>
 	
 	
-	<h3 data-sly-test.title="${properties.title}" >${title}</h3>
-    <div data-sly-test.description="${properties.description}">
+	<h3 data-sly-test.title="${example.title}" >${title}</h3>
+    <div data-sly-test.description="${example.description}">
         ${description @ context = 'html'}
     </div>
   
    
-    <div data-sly-list.stateMultifield="${resource.getChildren}">
-   	 <div data-sly-test="${stateMultifield.name == 'states'}">
-        <p>States</p>
-        <ul data-sly-list.state="${stateMultifield.getChildren}">
-         
-           <li data-sly-test.name="${state.jcr:name}">State: ${name} </li>
-	 	   <li data-sly-test.initials="${state.initials}">Initials: ${initials} </li>
-	 	   <li data-sly-test.flag="${state.flag}">
-	 	        Flag:
-	 	   		<img src="${flag}" alt="${name}"/>
-	 	   </li>
-           <sly data-sly-resource="${'separator' @resourceType='/apps/sample-site/components/separator'}"/>
-        
-        </ul>
-      </div>
+     <ul data-sly-list.state="${example.listItems}">
+  
+       <li data-sly-test.name="${state.name}">State: ${name} </li>
+ 	   <li data-sly-test.initials="${state.initials}">State: ${initials} </li>
+ 	   <li data-sly-test.flag="${state.flag}">
+ 	        Flag
+ 	   		<img src="${flag}" alt="${name}"/>
+ 	   </li>
+    </ul>  
+   
     
 </div>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=true}"></sly>

@@ -19,10 +19,8 @@ import org.apache.sling.models.spi.injectorspecific.StaticInjectAnnotationProces
 import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 
-import lombok.extern.slf4j.Slf4j;
 
 
-@Slf4j
 @Component(
 	    immediate = true, service = {Injector.class, StaticInjectAnnotationProcessorFactory.class},
 	    property = {Constants.SERVICE_RANKING + ":Integer=7000"})
@@ -49,7 +47,7 @@ import lombok.extern.slf4j.Slf4j;
 
 	                return getMultifield(resource.getChild(annotation.name()), annotation.values());
 	            } catch (Exception ex) {
-	            	 log.error("Error on access repository and get field value.", ex);
+	            	 //log.error("Error on access repository and get field value.", ex);
 	            }
 	        }
 	        return null;
@@ -79,7 +77,7 @@ import lombok.extern.slf4j.Slf4j;
 		        }
 				
 			} catch (RepositoryException ex) {
-				log.error("Error on access repository and get field value.", ex);
+				  ex.printStackTrace();
 			}
 
 	        

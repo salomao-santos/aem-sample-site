@@ -1,6 +1,7 @@
 package com.br.sample.site.core.models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -13,6 +14,8 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+
+import com.br.sample.site.core.provider.Multifield;
 
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ExampleComponentMultifieldUsingCustomAnnotationSlingModel {
@@ -28,20 +31,25 @@ public class ExampleComponentMultifieldUsingCustomAnnotationSlingModel {
 	private String description;
 
 	// Multifield Child Resource for States
-	@ChildResource(name = "states")
-	private List<Resource> resourceStates;
+//	@ChildResource(name = "states")
+//	private List<Resource> resourceStates;
+//	private List<StateModel> states;
+	
+	@Multifield(name = "states", values = {"jrc:name", "initials", "flag"})
+    private List<HashMap> listItems;
 
-	private List<StateModel> states;
+    
+	
 
-	@PostConstruct
-	protected void init() {
-		states = new ArrayList<StateModel>();
-
-		if (resourceStates != null) {
-			states = populatedModelState(states, resourceStates);
-		}
-
-	}
+//	@PostConstruct
+//	protected void init() {
+//		states = new ArrayList<StateModel>();
+//
+//		if (resourceStates != null) {
+//			states = populatedModelState(states, resourceStates);
+//		}
+//
+//	}
 
 	private List<StateModel> populatedModelState(List<StateModel> states, List<Resource> resources) {
 
@@ -62,7 +70,11 @@ public class ExampleComponentMultifieldUsingCustomAnnotationSlingModel {
 		return description;
 	}
 
-	public List<StateModel> getStates() {
-		return states;
-	}
+//	public List<StateModel> getStates() {
+//		return states;
+//	}
+	
+	public List<HashMap> getListItems() {
+        return listItems;
+    }
 }
