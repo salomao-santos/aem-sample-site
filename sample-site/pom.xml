@@ -32,10 +32,10 @@
         <module>ui.apps.structure</module>
         <module>ui.config</module>
         <module>ui.content</module>
-        <module>it.tests</module>
+        <!-- <module>it.tests</module>
         <module>dispatcher</module>
         <module>ui.tests</module>
-        <module>analyse</module> 
+        <module>analyse</module>  -->
     </modules>
 
     <properties>
