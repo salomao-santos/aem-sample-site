@@ -18,12 +18,15 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import com.br.sample.site.core.provider.Multifield;
 
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ExampleComponentMultifieldUsingCustomAnnotationSlingModel {
+public class SampleUsingCustomAnnotationSlingModel {
 
-	protected static final String RESOURCE_TYPE = "/app/wknd/components/samplemultifieldmodel";
-    
-	@ValueMapValue
-	@Required
+	// Beware of the @Required annotation, it can generate errors in the application, if the component is added to the page and is not used.
+	// When using the @Required annotation, it is recommended to use @Default, to avoid errors.
+	
+	//Cuidado com a anotação @Required, ela pode gerar problemas na aplicação, caso o componente seja adicionado na página e não seja utilizado.
+	//Ao utilizar a anotação @Required recomendo utilizar o @Default, para evitar erros.
+	//@Required
+	//@Default(values = "title")
 	private String title;
 
 	@ValueMapValue
@@ -38,8 +41,6 @@ public class ExampleComponentMultifieldUsingCustomAnnotationSlingModel {
 	@Multifield(name = "states", values = {"jrc:name", "initials", "flag"})
     private List<HashMap> listItems;
 
-    
-	
 
 //	@PostConstruct
 //	protected void init() {
