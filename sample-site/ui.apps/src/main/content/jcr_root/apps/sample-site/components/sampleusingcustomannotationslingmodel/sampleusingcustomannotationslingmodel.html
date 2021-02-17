@@ -1,0 +1,26 @@
+<div data-sly-use.example="com.br.sample.site.core.models.SampleUsingCustomAnnotationSlingModel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${example.title || example.description}">
+	
+	<h2>Sample using Custom Annotation Sling Model</h2>
+	
+	
+	<h3 data-sly-test.title="${example.title}" >${title}</h3>
+    <div data-sly-test.description="${example.description}">
+        ${description @ context = 'html'}
+    </div>
+  
+   
+     <ul data-sly-list.state="${example.listItems}">
+  
+       <li data-sly-test.name="${state.name}">State: ${name} </li>
+ 	   <li data-sly-test.initials="${state.initials}">State: ${initials} </li>
+ 	   <li data-sly-test.flag="${state.flag}">
+ 	        Flag
+ 	   		<img src="${flag}" alt="${name}"/>
+ 	   </li>
+    </ul>  
+   
+    
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cq-placeholder'}"></sly> 
