@@ -1,5 +1,6 @@
 <div data-sly-use.example="com.br.sample.site.core.models.SampleUsingCustomAnnotationSlingModel"
-     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${example.title || example.description}">
 	
 	<h2>Sample using Custom Annotation Sling Model</h2>
 	
@@ -22,4 +23,4 @@
    
     
 </div>
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=true}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cq-placeholder'}"></sly> 
