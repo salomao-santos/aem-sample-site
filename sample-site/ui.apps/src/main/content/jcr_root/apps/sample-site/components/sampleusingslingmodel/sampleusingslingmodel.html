@@ -1,11 +1,11 @@
-<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-     data-sly-use.example="com.br.sample.site.core.models.SampleUsingSlingModel"
-     data-sly-test.hasContent="${example.title || example.description}">
+<div data-sly-use.example="com.br.sample.site.core.models.SampleUsingSlingModel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${example.title}">
 	
-	<h2>Example Component Multifield Using Sling Model</h2>
+	<h2>Sample Multifield Using Sling Model</h2>
 	
 	
-	<h3 data-sly-test.title="${example.title}" >${title}</h3>
+	<h3 data-sly-test.title="${example.title}">${title}</h3>
     <div data-sly-test.description="${example.description}">
         ${description @ context = 'html'}
     </div>
@@ -20,6 +20,6 @@
  	   		<img src="${flag}" alt="${name}"/>
  	   </li>
     </ul> 
-     
-<sly data-sly-call="${placeholderTemplate.placeholder  @ isEmpty=!hasContent}"></sly>  
+
 </div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cq-placeholder'}"></sly>    

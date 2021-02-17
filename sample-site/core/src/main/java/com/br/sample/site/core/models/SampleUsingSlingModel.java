@@ -18,11 +18,14 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 public class SampleUsingSlingModel {
 
 	@ValueMapValue
-	@Required
+	//Cuidado com a anotação @Required ela pode gerar problemas na aplicação, caso o componente seja adicionado na página e não seja utilizado.
+	//Ao utilizar a anotação @Required recomendo utilizar o @Default, para evitar problemas.
+	//@Required
+	//@Default(values = "title")
 	private String title;
 
 	@ValueMapValue
-	@Default(values = "description")
+	//@Default(values = "description")
 	private String description;
 
 	//Multifield Child Resource for States
