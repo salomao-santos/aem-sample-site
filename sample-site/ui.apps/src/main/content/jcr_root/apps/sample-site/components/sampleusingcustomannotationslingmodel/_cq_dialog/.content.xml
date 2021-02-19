@@ -30,6 +30,9 @@
 									<column jcr:primaryType="nt:unstructured"
 										sling:resourceType="granite/ui/components/coral/foundation/container">
 										<items jcr:primaryType="nt:unstructured">
+										
+										    <!-- Examples of dialogs fields-->
+                                            <!-- https://gist.github.com/salomao-santos/0cd0240b9824b52a5fdf777ab712cfe2 -->
 
 											<!-- adicionar campo título -->
 											<title jcr:primaryType="nt:unstructured"
@@ -171,7 +174,9 @@
 															sling:resourceType="granite/ui/components/coral/foundation/well">
 															<items jcr:primaryType="nt:unstructured">
 
-																<!-- Dados dos estado, nome sigla e imagem -->
+																<!-- Dados dos estado, nome sigla e bandeira -->
+																<!-- Examples of dialogs fields-->
+                                                                <!-- https://gist.github.com/salomao-santos/0cd0240b9824b52a5fdf777ab712cfe2 -->
 
 																<name jcr:primaryType="nt:unstructured"
 																	sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
