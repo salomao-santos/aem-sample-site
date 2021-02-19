@@ -1,4 +1,5 @@
-<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${properties.title || properties.description}">
 	
 	<h2>Example Component Multifield Using Pure HTL</h2>
 	
@@ -24,6 +25,7 @@
         
         </ul>
       </div>
+      </div>
     
 </div>
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=true}"></sly>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent, classAppend='cq-placeholder'}"></sly>
