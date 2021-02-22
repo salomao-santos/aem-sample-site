@@ -1,4 +1,4 @@
-package com.br.sample.site.core.models;
+package com.br.sample.site.core.models.multifield.slingmodel;
 
 import org.apache.sling.api.resource.Resource;
 

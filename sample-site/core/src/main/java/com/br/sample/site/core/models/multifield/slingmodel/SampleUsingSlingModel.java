@@ -1,4 +1,4 @@
-package com.br.sample.site.core.models;
+package com.br.sample.site.core.models.multifield.slingmodel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,14 +7,10 @@ import javax.annotation.PostConstruct;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-
-import com.br.sample.site.core.models.multifield.slingmodel.StateModel;
 
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SampleUsingSlingModel {
