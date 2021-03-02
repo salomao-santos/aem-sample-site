@@ -1,4 +1,4 @@
-package com.br.sample.site.core.models;
+package com.br.sample.site.core.models.multifield.customannotation.slingmodel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
