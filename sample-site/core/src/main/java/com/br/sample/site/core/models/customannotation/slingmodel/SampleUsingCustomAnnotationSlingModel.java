@@ -33,14 +33,8 @@ public class SampleUsingCustomAnnotationSlingModel {
 	@Default(values = "description")
 	private String description;
 
-	// Multifield Child Resource for States
-//	@ChildResource(name = "states")
-//	private List<Resource> resourceStates;
-//	private List<StateModel> states;
-
 	@Getter
 	@Multifield(name = "states", values = {"jrc:name", "initials", "flag"})
     private List<HashMap> states;
-
 
 }
