@@ -1,4 +1,4 @@
-<div data-sly-use.example="com.br.sample.site.core.models.multifield.customannotation.slingmodel.SampleUsingCustomAnnotationSlingModel"
+<div data-sly-use.example="com.br.sample.site.core.models.customannotation.slingmodel.SampleUsingCustomAnnotationSlingModel"
      data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      data-sly-test.hasContent="${example.title || example.description}">
 	
@@ -11,7 +11,7 @@
     </div>
   
    
-     <ul data-sly-list.state="${example.listItems}">
+     <ul data-sly-list.state="${example.states}">
   
        <li data-sly-test.name="${state.name}">State: ${name} </li>
  	   <li data-sly-test.initials="${state.initials}">State: ${initials} </li>

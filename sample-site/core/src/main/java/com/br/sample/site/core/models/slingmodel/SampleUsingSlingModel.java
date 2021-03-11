@@ -1,4 +1,4 @@
-package com.br.sample.site.core.models.multifield.slingmodel;
+package com.br.sample.site.core.models.slingmodel;
 
 import java.util.ArrayList;
 import java.util.List;

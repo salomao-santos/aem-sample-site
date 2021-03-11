@@ -15,7 +15,7 @@ import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import com.br.sample.site.core.models.multifield.slingmodel.StateModel;
+import com.br.sample.site.core.models.slingmodel.StateModel;
 import com.br.sample.site.core.provider.Multifield;
 
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
