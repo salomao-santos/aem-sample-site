@@ -19,9 +19,9 @@ public class SampleSiteServiceImpl implements SampleSiteService {
 	@Override
 	public ServiceModel makeHttpCall() {
 		
-		String protocol = "";
-		String server = "";
-		String endpoint = "";
+		String protocol = "https";
+		String server = "raw.githubusercontent.com/salomao-santos/aem-sample-site/feature/servelt-sample-ss/data";
+		String endpoint = "estados-e-cidades.json";
 		
 		String url = protocol + "://" + server + "/" + endpoint;
 		
