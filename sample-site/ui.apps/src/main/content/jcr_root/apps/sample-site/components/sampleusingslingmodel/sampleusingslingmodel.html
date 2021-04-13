@@ -13,8 +13,8 @@
 
      <ul data-sly-list.state="${example.states}">
   
-       <li data-sly-test.name="${state.name}">State: ${name} </li>
- 	   <li data-sly-test.initials="${state.initials}">State: ${initials} </li>
+       <li data-sly-test.name="${state.jcr:name}">State: ${name} </li>
+ 	   <li data-sly-test.initials="${state.initials}">Initials: ${initials} </li>
  	   <li data-sly-test.flag="${state.flag}">
  	        Flag
  	   		<img src="${flag}" alt="${name}"/>

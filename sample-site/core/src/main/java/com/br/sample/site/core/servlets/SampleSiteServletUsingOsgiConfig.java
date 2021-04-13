@@ -15,7 +15,7 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import com.br.sample.site.core.models.ServiceModel;
-import com.br.sample.site.core.services.impl.SampleSiteServiceUsingConfigImpl;
+import com.br.sample.site.core.services.impl.SampleSiteServiceUsingOsgiConfigImpl;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,10 +27,10 @@ import lombok.extern.slf4j.Slf4j;
         		Constants.SERVICE_DESCRIPTION + "=JSON Sample Servlet to read the data from the external webservice",
                 "sling.servlet.methods=" + HttpConstants.METHOD_GET,
                 "sling.servlet.resourceTypes=" + "sample-site/components/page",
-                "sling.servlet.selectors=" + SampleSiteServlet.DEFAULT_SELECTOR,
+                "sling.servlet.selectors=" + SampleSiteServletUsingOsgiConfig.DEFAULT_SELECTOR,
                 "sling.servlet.extensions=json"
         })
-public class SampleSiteServletUsingConfig extends SlingSafeMethodsServlet {
+public class SampleSiteServletUsingOsgiConfig extends SlingSafeMethodsServlet {
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -40,7 +40,7 @@ public class SampleSiteServletUsingConfig extends SlingSafeMethodsServlet {
 	
 	
 	@Reference
-	private SampleSiteServiceUsingConfigImpl sampleSiteServiceUsingConfigImpl; 
+	private SampleSiteServiceUsingOsgiConfigImpl sampleSiteServiceUsingConfigImpl; 
 	
 	private ServiceModel serviceModel;
 	
@@ -51,9 +51,12 @@ public class SampleSiteServletUsingConfig extends SlingSafeMethodsServlet {
         
         serviceModel = sampleSiteServiceUsingConfigImpl.makeHttpCall();
         
-        response.setHeader("Content-Type", "application/json; charset=utf-8");
-        response.setStatus(serviceModel.getStatusCode());
 
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+ 
+        response.setStatus(serviceModel.getStatusCode());
+        
         out.print(serviceModel.getJson());
         out.close();
     }

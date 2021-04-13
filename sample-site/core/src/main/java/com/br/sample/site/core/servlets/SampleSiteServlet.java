@@ -37,22 +37,25 @@ public class SampleSiteServlet extends SlingSafeMethodsServlet {
 	private static final long serialVersionUID = 1L;
 
 
-	protected static final String DEFAULT_SELECTOR = "states-and-cities";
+	protected static final String DEFAULT_SELECTOR = "samplesiteservelt";
 	
 	
 	@Reference
 	private SampleSiteService sampleSiteService; 
 	
-	private ServiceModel serviceModel;
+	
 	
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         
     	PrintWriter out = response.getWriter();
         
-        serviceModel = sampleSiteService.makeHttpCall();
+    	ServiceModel serviceModel = sampleSiteService.makeHttpCall();
         
-        response.setHeader("Content-Type", "application/json; charset=utf-8");
+        
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+ 
         response.setStatus(serviceModel.getStatusCode());
 
         out.print(serviceModel.getJson());
