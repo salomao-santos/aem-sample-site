@@ -26,6 +26,7 @@ public class SampleUsingCustomAnnotationSlingModel {
 	//@Required
 	//@Default(values = "title")
 	@Getter
+	@ValueMapValue
 	private String title;
 
 	@Getter
